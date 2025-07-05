@@ -1,0 +1,647 @@
+
+body{
+    
+    background: rgb(63, 53, 53)
+    /*because i made this default that's why menu is still this color */
+}
+
+/*almost good just wanna move to right side */
+
+:root {
+    --timing-function   : cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    --nav-width-desktop : 40em;
+    --nav-width-mobile  : 25em;
+    --nav-item-nb       : 6;
+}
+
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(33,33,33);
+  padding: 0 1em;
+}
+
+input {
+	position: fixed;
+	opacity: 0;
+}
+label {
+    position: absolute;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer; }
+
+label::before {
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: '';
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity .2s var(--timing-function);
+	}
+	.burger {
+        background-color: transparent;
+		position: fixed;
+		top: 1em;
+		display: inline-block;
+		right: 1em;
+		left: auto;
+		z-index: 3;
+		width: 2em;
+		height: 2em;
+		margin: 0;
+		padding: 0;
+		transition: opacity .5s var(--timing-function);  }
+
+		
+		.burger::after, .burger::before{
+			position: absolute;
+            left: 0;
+			display: block;
+			width: 100%;
+			height: 12%;
+			background: white;
+			top: 50%;
+			content: '';
+			transition: all .5s var(--timing-function);
+		} 
+		.bar{
+			display: block;
+  			width: 100%;
+  			height: 4px;
+  			background: white;
+  			position: absolute;
+  			left: 0;
+			top: 50%;
+  			transform: translateY(-50%);
+  			transition: all 0.4s var(--timing-function);
+		}
+		.bar::before {
+			content: '';
+  			position: absolute;
+  			left: 0;
+  			width: 100%;
+  			height: 4px;
+  			background: white;
+  			transition: all 0.4s var(--timing-function);
+			top: -10px;
+			/*transform-origin: top left;*/
+		}
+		.bar::after {
+	  		content: '';
+  			position: absolute;
+  			top: 10px;
+  			left: 0;
+  			width: 100%;
+  			height: 4px;
+  			background: white;
+  			transition: all 0.4s var(--timing-function);
+			/*transform-origin: bottom left;*/
+		}
+	
+
+input:focus + label,
+label:hover {
+	.burger {
+		opacity: .75;
+	}
+}
+
+nav {
+	background-color: #B31B1B;
+    position: fixed;
+	top: 0;
+	left: auto;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: flex-start;
+    padding-bottom: 18em;
+	transform: translate3d(0,0,0); /* material acceleration */
+	transform: translateX(100%);
+	will-change: transform;
+	transition: transform .2s var(--timing-function); }
+	/*nav::before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0; 
+		z-index: -1;
+		width: var(--nav-width-mobile);
+		background: #d62956;
+		content: '';
+		transform: skewX(15deg) translateX(-100%);
+		transform-origin: bottom left;
+		will-change: transform;
+		transition: transform .2s var(--timing-function); } */
+		
+
+	nav a {
+		display: block;
+        /*margin: .5em 0;*/
+        margin-left: 0;
+		padding: 0.2em 2em;
+		font-size: 1.5em;
+		color: wheat;
+		text-decoration: none;
+		font-weight: 500;
+		transform: translateX(100%);
+		transition: color .15s, transform .5s;
+		transition-timing-function: var(--timing-function);
+		&:hover, &:focus {
+			color: white;
+		}
+	}
+
+main {
+	padding-top: 120px;
+	overflow: hidden;
+	background-image: url(pictures/Portfolio\ Backkground.png);
+	.content {
+		transform: translate3d(0,0,0); /* material acceleration */
+		will-change: transform, filter;
+		transition: all .2s --timing-function;
+	}
+}
+
+[id="navcheck"]:checked {
+  & + label {
+    &::before {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .burger {
+      &::before,
+      &::after {
+        width: 141.42%;
+      }
+
+      &::before {
+        transform: rotate(45deg) translateY(-50%);
+      }
+
+      &::after {
+        transform: rotate(-45deg) translateY(50%);
+      }
+
+      .bar {
+        transform: scale(0.1);
+      }
+    }
+  }
+
+  /* Properly nest everything inside the nav */
+  & ~ nav {
+    transform: translateX(0);
+
+    &::before {
+      transform: skewX(-15deg) translateX(0);
+    }
+
+    a {
+      transform: translateX(0);
+    }
+  }
+
+  /* Optional: shift content */
+  & ~ main .content {
+    transform: translateX(-3em);
+    transform-origin: right center;
+    filter: blur(2px);
+  }
+}
+
+
+
+/* helper */
+.visuallyhidden { border:0; clip:rect(0 0 0 0);	height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; width:1px; }
+
+
+/*hold on Z so I;m trying to understand so most of the time for headers
+and stuff like that so you add some top and left and make the display flex
+and and justify content space between. If you want the header to be 
+on the top when you scroll constantly then do z-index and usually. It 
+helps to make the background transparent but sometimes you don't want to 
+do that for the header
+so 
+.nav {
+background: transparent;
+display: flex;
+justify-content: space-evenly;
+z-index:100;
+position: fixed
+width:100%
+//These are especially important for the purpose of a nav bar sorry meant
+//that not header. Can also do some positioning of text or top and left
+}*/
+
+/*I think for a lot of the nav bar it didn't work with the rotations.*/
+
+/*stop here new code */
+
+/*also try to see the difference from let's say styling nav vs class name
+ex: <nav class = "" ...> ....*/
+
+/*also to overlay text on a picture can do background then the text*/
+
+nav {
+    border-color: red;
+    border-width: 8px;
+    border-style: solid;
+	transition: opacity .5s var(--timing-function);
+}
+
+.nav-links{
+    /*
+    display: flex;
+    justify-content: space-evenly;
+    border-color: yellow;
+    border-width: 8px;
+    border-style: solid; */
+	transition: opacity .5s var(--timing-function);
+    background-color: #B31B1B;
+    text-align: left;
+    list-style-type: none;
+
+}
+
+nav li a {
+    background-color: #B31B1B;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+
+.logo {
+    font-size: 64px;
+    color: rgb(255,255,255);
+}
+.boxed-text {
+	padding: 0.25em 0.75em;
+  	background-color: #B31B1B;
+  	color: white;
+  	margin: 0;
+	/*
+    max-width: 33%;*/
+    text-align: center;
+	font-size: 16px;
+}
+
+.intro {
+	/*
+    border-color: red;
+    border-width: 8px;
+    border-style: solid; */
+	display:flex;
+	position: relative;
+	overflow:hidden;
+	padding-bottom:55px;
+}
+
+.intro-slide-text {
+	color:white;
+}
+
+.intro-slide-texty-text{
+	display:flex;
+	height: 65vh;
+	flex-direction:column;
+	width: 50vw;
+	justify-content: space-evenly; /*ain't do nun lol*/
+}
+
+.typed-h3{
+	color: #B31B1B;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 48px;
+	text-shadow: 0 0 10px white, 
+				 0 0 20px white, 
+				 0 0 30px red;
+	width: 0;
+	/*animation: typing 3s steps(13), blink 0.75s step-end infinite;*/
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*
+@keyframes typing {
+  from { width: 0 }
+  to { width: 26ch } /* number of characters 
+} 
+
+@keyframes blink {
+  50% { border-color: transparent }
+} */
+
+.typed-h1{
+	color: white;
+	overflow: hidden;
+	white-space: nowrap;
+	text-shadow: 0 0 10px red, 
+				 0 0 20px red, 
+				 0 0 30px red;
+	font-size:72px;
+	width: 0;
+	animation: typing 3s steps(13), blink 0.75s step-end infinite;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.typed-h5{
+	color: white;
+	overflow: hidden;
+	font-size:24px;
+	width: 0;
+	animation: typing 3s steps(13), blink 0.75s step-end infinite;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.typed-h2{
+	color: gray;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 0;
+	font-size:60px;
+	animation: typing 3s steps(13), blink 0.75s step-end infinite;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.circular-border {
+	border: 4px solid #B31B1B;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	border-radius: 200px;
+	position: absolute;
+	right: 0;
+	height: auto;
+	margin: 20px auto;
+	max-width:100%;
+	display: block;
+}
+
+.project-title {
+    background-color:rgb(63, 53, 53);
+    text-align: center;
+    color: rgb(255,255,255);
+    font-size: 64px;
+}
+
+.picture-border {
+	border-radius: 200px;
+	outline: none;
+}
+
+.AboutMe {
+    background-color:rgb(63, 53, 53);
+    text-align: center;
+    color: rgb(255,255,255);
+    font-size: 64px;
+	opacity: 0;
+	transition: all 1s;
+}
+
+.slideshowLike {
+    display:flex;
+    border-color: red;
+    border-width: 8px;
+}
+
+.experience {
+    background-color:rgb(63, 53, 53);
+    text-align: center;
+    color: rgb(255,255,255);
+    font-size: 64px;
+	opacity: 0;
+	transition: all 1s;
+	background-image:url(pictures/Portfolio\ Backkground.png);
+}
+
+@media(prefers-reduced-motion) {
+	.AboutMe{
+		transition:none;
+	}
+	.experience {
+		transition: none;
+	}
+}
+
+.AboutMe.show {
+	opacity: 1;
+}
+
+.experience.show {
+	opacity: 1;
+}
+
+.boxed-textTwo {
+    padding: 1px;
+    background-color: #B31B1B;
+    max-width: 33%;
+    text-align: center;
+    margin: 20px auto;
+	color:white;
+}
+
+@media (max-width:600px) {
+    body {
+        font-size: 0.675rem;
+    }
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+	opacity: 0;
+	transition: all 1s;
+}
+
+.projects.show {
+	opacity: 1;
+}
+
+.project-card {
+	background: rgb(33,33,33);
+	padding: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.project-card h2 {
+	color: white;
+	text-align: left;
+}
+
+.project-card p {
+    margin: 10px 0;
+    font-size: 1rem;
+	color: white;
+	text-align: left;
+}
+
+.project-card button {
+    padding: 8px;
+    font-size: 0.95rem;
+    background-color: #B31B1B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-card button:hover {
+    background-color: #9d1212;
+}
+
+.project-card img:hover {
+	aspect-ratio: 16/11;
+}
+
+/*
+.coverpics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.coverpics img{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-color: green;
+    border-width: 8px;
+    border-style: solid;
+}
+
+.projecting{
+	border: red solid 4px;
+	display: grid;
+    justify-content: space-between;
+}
+
+.ESkate {
+    border-color: blue;
+    border-width: 8px;
+    border-style: solid;
+    text-align:center;
+    flex: 1;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+	flex-direction: column;
+}
+
+.ftc {
+    text-align: center;
+    flex: 1;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.selfbal {
+
+    text-align: center;
+    flex: 1;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.project-descriptions {
+	display: flex;
+	flex-direction: row;
+	background-color: blue;
+	padding:4px;
+	border: 4px solid green;
+}
+
+.ESkate:hover img{
+    box-shadow: 20px 20px 20px lightblue inset;
+    cursor:crosshair;
+} */
+
+.footer {
+  padding-top:0;
+  padding: 0 20px 20px 20px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: grid;
+  background-color: rgb(63, 53, 53);
+  color: white;
+  position: relative;
+  opacity: 0;
+  transition: all 1s;
+}
+
+
+.footer.show {
+	opacity: 1;
+}
+
+.footer-icons {
+	display:flex;
+	justify-content: space-evenly;
+	margin: 4px;
+}
+
+.fa-linkedin-square{
+  background: #B31B1B;
+  color: white;
+  text-decoration: none;
+}
+
+.fa-github-square{
+  background: #B31B1B;
+  color: white;
+  text-decoration: none;
+}
+
+.fa-envelope {
+	background: #B31B1B;
+	color: white;
+	text-decoration: none;
+}
+
+.butty{
+	padding:10px;
+	background-color:#B31B1B;
+	border-radius: 20px;
+}
+
+.butty:hover {
+	opacity: 0.7;
+}

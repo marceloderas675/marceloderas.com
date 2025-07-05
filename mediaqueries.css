@@ -1,0 +1,78 @@
+@media screen and (max-width: 1000px) {
+    .logo {
+        font-size: 36px;
+        /*not really changing the size of the whole title how I want it to*/
+    }
+
+    .project-title {
+        font-size: 32px;
+    }
+
+    .AboutMe {
+        font-size: 32px;
+    }
+
+    .experience {
+        font-size: 32px;
+    }
+
+    .typed-h3{
+	color: #B31B1B;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 24px;
+	text-shadow: 0 0 10px white, 
+				 0 0 20px white, 
+				 0 0 30px red;
+	width: 0;
+	/*animation: typing 3s steps(13), blink 0.75s step-end infinite;*/
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    .intro-slide-texty-text {
+        width: 45vw;
+    }
+
+    .typed-h1{
+	color: white;
+	overflow: hidden;
+	white-space: nowrap;
+	text-shadow: 0 0 10px red, 
+				 0 0 20px red, 
+				 0 0 30px red;
+	font-size:36px;
+	width: 0;
+	animation: typing 3s steps(13), blink 0.75s step-end infinite;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .typed-h5{
+	color: white;
+	overflow: hidden;
+	font-size:12px;
+	width: 0;
+	animation: typing 3s steps(13), blink 0.75s step-end infinite;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .typed-h2{
+	color: gray;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 0;
+	font-size:32px;
+	animation: typing 3s steps(13), blink 0.75s step-end infinite;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .circular-border {
+	border: 4px solid #B31B1B;
+    border-radius: 200px;
+	position: absolute;
+	right: 0;
+    }
+}
+
+
+/*what this means is that the display nav will disappear or the horizontal list
+will disappear after reaching a width of i think 1200px*/ 

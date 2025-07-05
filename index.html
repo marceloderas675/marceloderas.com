@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcelo's Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="pictures/favicon-pweb.jpg">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="header">
+  <div><p class = "boxed-text" href="/">Marcelo Deras</p></div>
+    <input type="checkbox" id="navcheck" role="button" title="menu">
+  <label for="navcheck" title="menu">
+    <span class="burger">
+      <span class="bar">
+        <span class="visuallyhidden">Menu</span>
+      </span>
+    </span>
+  </label>
+  <nav>
+    <ul class="nav-links">
+     <li><a href="#aboutMee">About me</a></li>
+     <li><a href="#experieence">Experience</a></li>   
+     <li><a href="#projects">Projects</a></li>   
+     <li><a href="#contacts">Contact</a></li>   
+    </ul>
+  </nav>
+  </div>
+
+<main>
+  <section class="intro"> 
+
+    <div class="intro-slide-text">
+      <div class="intro-slide-texty-text">
+    <h3><span class="typed-h3"></span></h3>
+    <h1><span class="typed-h1"></span></h1>
+    <h2><span class="typed-h2"></span></h2>
+    <h5><span class="typed-h5"></span></h5>   
+    <!--I think at some media width I gotta shrink the text or separate it or make it line break-->   
+      </div> 
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+function startTypingSequence() {
+  // Step 1: typed-h3
+  new Typed(".typed-h3", {
+    strings: ["Hi, my name is"],
+    typeSpeed: 70,
+    backSpeed: 70,
+    showCursor: false,
+    onComplete: () => {
+      // Step 2: typed-h1
+      new Typed(".typed-h1", {
+        strings: ["Marcelo Deras"],
+        typeSpeed: 70,
+        backSpeed: 70,
+        showCursor: false,
+        onComplete: () => {
+          // Step 3: typed-h2
+          new Typed(".typed-h2", {
+            strings: ["Electrical Engineer"],
+            typeSpeed: 70,
+            backSpeed: 70,
+            showCursor: false,
+            onComplete: () => {
+              // Step 4: typed-h5 (long string)
+              new Typed(".typed-h5", {
+                strings: [
+                  "I'm an electrical engineering student studying at Cornell University. Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
+                ],
+                typeSpeed: 30,
+                backSpeed: 30,
+                showCursor: false,
+                backDelay: 2000,
+                onComplete: () => {
+                  // Step 5: Backspace reverse order
+                  backspaceReverse();
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  });
+}
+
+function backspaceReverse() {
+  // Backspacing h5
+  setTimeout(() => {
+    new Typed(".typed-h5", {
+      strings: [""],
+      typeSpeed: 0,
+      backSpeed: 30,
+      showCursor: false,
+      onComplete: () => {
+        // Backspacing h2
+        setTimeout(() => {
+          new Typed(".typed-h2", {
+            strings: [""],
+            typeSpeed: 0,
+            backSpeed: 70,
+            showCursor: false,
+            onComplete: () => {
+              // Backspacing h1
+              setTimeout(() => {
+                new Typed(".typed-h1", {
+                  strings: [""],
+                  typeSpeed: 0,
+                  backSpeed: 70,
+                  showCursor: false,
+                  onComplete: () => {
+                    // Backspacing h3
+                    setTimeout(() => {
+                      new Typed(".typed-h3", {
+                        strings: [""],
+                        typeSpeed: 0,
+                        backSpeed: 70,
+                        showCursor: false,
+                        onComplete: () => {
+                          // Restart full typing sequence
+                          setTimeout(startTypingSequence, 500);
+                        }
+                      });
+                    }, 250); // pause before backspacing h3
+                  }
+                });
+              }, 250); // pause before backspacing h1
+            }
+          });
+        }, 250); // pause before backspacing h2
+      }
+    });
+  }, 250); // pause before backspacing h5
+}
+
+// Start the loop
+document.addEventListener("DOMContentLoaded", startTypingSequence);
+    </script>
+
+  <div class="circularer-border">
+    <div class="circular-border" id="pause">
+      <div>
+        <img class="picture-border" src="pictures/IMG_04501.jpeg">
+      </div>
+    </div> 
+  </div>
+
+  </section>
+
+  <section class="AboutMe" id="aboutMee"><p class = "boxed-textTwo">About Me</p></div>
+  <div class ="slideshowLike"><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+  </p>
+  <!--<img src="pictures/IMG_04501.jpeg">-->
+</section>
+
+
+  <section class="experience" id="experieence"><p class="boxed-textTwo">Experience</p></div>
+  <div><p>    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p></section>
+
+  <div class="project-title" id="projects">
+  <p class="boxed-textTwo">Projects</p>
+  </div>
+  
+<div class="projects">
+  <div class="project-card">
+    <img src="pictures/Screenshot 2025-01-30 151334.png" alt="ESkateboard">
+    <h2>Electric Skateboard</h2>
+    <p>This is a description of the project...</p>
+    <button>View More</button>
+  </div>
+  
+  <div class="project-card">
+    <img src="pictures/IMG_9624.jpeg" alt="FTC Robot">
+    <h2>First Tech Challenge Robot</h2>
+    <p>This is a description of the project...</p>
+    <button>View More</button>
+  </div>
+  
+  <div class="project-card">
+    <img src="pictures/Screenshot 2025-01-30 150756.png" alt="Self-Balancing Robot">
+    <h2>Self Balancing Robot</h2>
+    <p>Created a self balancing robot utilizing an Arduino Uno, L298N Driver Module, an MPU6050, and 3D printed parts from OnShape.</p>
+    <button href="selfbalancingrobot.html">View More</button>
+  </div>
+</div>
+
+
+
+
+  </main>
+  <div class="footer" id="contact"> 
+      <h1 class="boxed-textTwo">Contact Me</h1>
+      <h3>I'm always open to new opportunities, collaborations, or just a friendly chat about electrical engineering. Feel free to reach out to me through any of the outlets below.</h3>
+    <div class="footer-icons">
+    <div class="butty">
+    <a href="https://www.linkedin.com/in/marcelo-d-88aa74277/" class = "fa fa-linkedin-square" target="_blank"> Linkedin</a>
+    </div>
+    <div class="butty">
+    <a href=" " class="fa fa-github-square" target="_blank"> Github</a></div>
+    <div class="butty">
+    <a href="mailto:md2265@cornell.edu" class="fa fa-envelope" target ="_blank"> md2265@cornell.edu</a></div> 
+  </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+  
