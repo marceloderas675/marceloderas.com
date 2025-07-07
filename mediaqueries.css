@@ -1,7 +1,6 @@
 @media screen and (max-width: 1000px) {
     .logo {
         font-size: 36px;
-        /*not really changing the size of the whole title how I want it to*/
     }
 
     .project-title {
@@ -25,7 +24,6 @@
 				 0 0 20px white, 
 				 0 0 30px red;
 	width: 0;
-	/*animation: typing 3s steps(13), blink 0.75s step-end infinite;*/
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     
@@ -70,9 +68,45 @@
     border-radius: 200px;
 	position: absolute;
 	right: 0;
+	height: auto;
+	max-width:100%;
+	display: block;
     }
+
 }
 
+@media screen and (max-width: 768px) {
+	.intro{
+		flex-direction: column;
+		align-items: center;
+		text-align: center
+	}
 
-/*what this means is that the display nav will disappear or the horizontal list
-will disappear after reaching a width of i think 1200px*/ 
+	.intro-slide-text {
+		order: 1;
+		position: relative;
+	}
+
+	.circular-border {
+		order: 2;
+		max-width: 200px;
+		position: relative;
+	}
+
+	.picture-border {
+		opacity: 0;
+		transition: 1s all;
+	}
+
+	.picture-border.show {
+		opacity: 1;
+	}
+
+}
+
+@media screen and (max-width: 491px) {
+	.boxed-textTwo {
+		font-size: 24px;
+	}
+}
+
