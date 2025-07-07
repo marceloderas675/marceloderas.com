@@ -1,7 +1,8 @@
 
 body{
     
-    background: rgb(63, 53, 53)
+    background: rgb(63, 53, 53);
+	word-wrap: break-word;
     /*because i made this default that's why menu is still this color */
 }
 
@@ -100,7 +101,6 @@ label::before {
   			background: white;
   			transition: all 0.4s var(--timing-function);
 			top: -10px;
-			/*transform-origin: top left;*/
 		}
 		.bar::after {
 	  		content: '';
@@ -111,7 +111,6 @@ label::before {
   			height: 4px;
   			background: white;
   			transition: all 0.4s var(--timing-function);
-			/*transform-origin: bottom left;*/
 		}
 	
 
@@ -135,23 +134,11 @@ nav {
 	justify-content: center;
 	align-items: flex-start;
     padding-bottom: 18em;
-	transform: translate3d(0,0,0); /* material acceleration */
+	transform: translate3d(0,0,0);
 	transform: translateX(100%);
 	will-change: transform;
 	transition: transform .2s var(--timing-function); }
-	/*nav::before {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0; 
-		z-index: -1;
-		width: var(--nav-width-mobile);
-		background: #d62956;
-		content: '';
-		transform: skewX(15deg) translateX(-100%);
-		transform-origin: bottom left;
-		will-change: transform;
-		transition: transform .2s var(--timing-function); } */
+
 		
 
 	nav a {
@@ -176,7 +163,7 @@ main {
 	overflow: hidden;
 	background-image: url(pictures/Portfolio\ Backkground.png);
 	.content {
-		transform: translate3d(0,0,0); /* material acceleration */
+		transform: translate3d(0,0,0);
 		will-change: transform, filter;
 		transition: all .2s --timing-function;
 	}
@@ -209,7 +196,6 @@ main {
     }
   }
 
-  /* Properly nest everything inside the nav */
   & ~ nav {
     transform: translateX(0);
 
@@ -222,7 +208,6 @@ main {
     }
   }
 
-  /* Optional: shift content */
   & ~ main .content {
     transform: translateX(-3em);
     transform-origin: right center;
@@ -232,36 +217,8 @@ main {
 
 
 
-/* helper */
 .visuallyhidden { border:0; clip:rect(0 0 0 0);	height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; width:1px; }
 
-
-/*hold on Z so I;m trying to understand so most of the time for headers
-and stuff like that so you add some top and left and make the display flex
-and and justify content space between. If you want the header to be 
-on the top when you scroll constantly then do z-index and usually. It 
-helps to make the background transparent but sometimes you don't want to 
-do that for the header
-so 
-.nav {
-background: transparent;
-display: flex;
-justify-content: space-evenly;
-z-index:100;
-position: fixed
-width:100%
-//These are especially important for the purpose of a nav bar sorry meant
-//that not header. Can also do some positioning of text or top and left
-}*/
-
-/*I think for a lot of the nav bar it didn't work with the rotations.*/
-
-/*stop here new code */
-
-/*also try to see the difference from let's say styling nav vs class name
-ex: <nav class = "" ...> ....*/
-
-/*also to overlay text on a picture can do background then the text*/
 
 nav {
     border-color: red;
@@ -271,12 +228,6 @@ nav {
 }
 
 .nav-links{
-    /*
-    display: flex;
-    justify-content: space-evenly;
-    border-color: yellow;
-    border-width: 8px;
-    border-style: solid; */
 	transition: opacity .5s var(--timing-function);
     background-color: #B31B1B;
     text-align: left;
@@ -305,6 +256,7 @@ nav li a {
     max-width: 33%;*/
     text-align: center;
 	font-size: 16px;
+	text-decoration: none;
 }
 
 .intro {
@@ -342,16 +294,6 @@ nav li a {
 	/*animation: typing 3s steps(13), blink 0.75s step-end infinite;*/
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
-/*
-@keyframes typing {
-  from { width: 0 }
-  to { width: 26ch } /* number of characters 
-} 
-
-@keyframes blink {
-  50% { border-color: transparent }
-} */
 
 .typed-h1{
 	color: white;
@@ -398,6 +340,18 @@ nav li a {
 	display: block;
 }
 
+.circular-border img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.image-wrapper {
+	width: 100%;
+	text-align: center;
+}
+
+
 .project-title {
     background-color:rgb(63, 53, 53);
     text-align: center;
@@ -408,6 +362,9 @@ nav li a {
 .picture-border {
 	border-radius: 200px;
 	outline: none;
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
 .AboutMe {
@@ -433,6 +390,11 @@ nav li a {
 	opacity: 0;
 	transition: all 1s;
 	background-image:url(pictures/Portfolio\ Backkground.png);
+}
+
+.pcb-back {
+	border: 4px solid blue;
+	text-align: center;
 }
 
 @media(prefers-reduced-motion) {
@@ -519,7 +481,15 @@ nav li a {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
+	text-decoration: none;
+}
+
+.project-card button a{
+	text-decoration: none;
+	color: white;
+	font-size: 0.95rem;
+
 }
 
 .project-card button:hover {
@@ -529,69 +499,6 @@ nav li a {
 .project-card img:hover {
 	aspect-ratio: 16/11;
 }
-
-/*
-.coverpics {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.coverpics img{
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-    border-color: green;
-    border-width: 8px;
-    border-style: solid;
-}
-
-.projecting{
-	border: red solid 4px;
-	display: grid;
-    justify-content: space-between;
-}
-
-.ESkate {
-    border-color: blue;
-    border-width: 8px;
-    border-style: solid;
-    text-align:center;
-    flex: 1;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-	flex-direction: column;
-}
-
-.ftc {
-    text-align: center;
-    flex: 1;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-}
-
-.selfbal {
-
-    text-align: center;
-    flex: 1;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-}
-
-.project-descriptions {
-	display: flex;
-	flex-direction: row;
-	background-color: blue;
-	padding:4px;
-	border: 4px solid green;
-}
-
-.ESkate:hover img{
-    box-shadow: 20px 20px 20px lightblue inset;
-    cursor:crosshair;
-} */
 
 .footer {
   padding-top:0;
@@ -616,6 +523,10 @@ nav li a {
 	display:flex;
 	justify-content: space-evenly;
 	margin: 4px;
+}
+
+.footer h3 {
+	font-size: 50px;
 }
 
 .fa-linkedin-square{
