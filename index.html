@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="header">
-  <div><p class = "boxed-text" href="/">Marcelo Deras</p></div>
+  <div><a class = "boxed-text" href="#pause">Marcelo Deras</a></div>
     <input type="checkbox" id="navcheck" role="button" title="menu">
   <label for="navcheck" title="menu">
     <span class="burger">
@@ -26,7 +26,7 @@
      <li><a href="#aboutMee">About me</a></li>
      <li><a href="#experieence">Experience</a></li>   
      <li><a href="#projects">Projects</a></li>   
-     <li><a href="#contacts">Contact</a></li>   
+     <li><a href="#contact">Contact</a></li>   
     </ul>
   </nav>
   </div>
@@ -46,28 +46,24 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
 function startTypingSequence() {
-  // Step 1: typed-h3
   new Typed(".typed-h3", {
     strings: ["Hi, my name is"],
     typeSpeed: 70,
     backSpeed: 70,
     showCursor: false,
     onComplete: () => {
-      // Step 2: typed-h1
       new Typed(".typed-h1", {
         strings: ["Marcelo Deras"],
         typeSpeed: 70,
         backSpeed: 70,
         showCursor: false,
         onComplete: () => {
-          // Step 3: typed-h2
           new Typed(".typed-h2", {
             strings: ["Electrical Engineer"],
             typeSpeed: 70,
             backSpeed: 70,
             showCursor: false,
             onComplete: () => {
-              // Step 4: typed-h5 (long string)
               new Typed(".typed-h5", {
                 strings: [
                   "I'm an electrical engineering student studying at Cornell University. Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
@@ -77,7 +73,6 @@ function startTypingSequence() {
                 showCursor: false,
                 backDelay: 2000,
                 onComplete: () => {
-                  // Step 5: Backspace reverse order
                   backspaceReverse();
                 }
               });
@@ -90,7 +85,6 @@ function startTypingSequence() {
 }
 
 function backspaceReverse() {
-  // Backspacing h5
   setTimeout(() => {
     new Typed(".typed-h5", {
       strings: [""],
@@ -98,7 +92,6 @@ function backspaceReverse() {
       backSpeed: 30,
       showCursor: false,
       onComplete: () => {
-        // Backspacing h2
         setTimeout(() => {
           new Typed(".typed-h2", {
             strings: [""],
@@ -106,7 +99,6 @@ function backspaceReverse() {
             backSpeed: 70,
             showCursor: false,
             onComplete: () => {
-              // Backspacing h1
               setTimeout(() => {
                 new Typed(".typed-h1", {
                   strings: [""],
@@ -114,7 +106,6 @@ function backspaceReverse() {
                   backSpeed: 70,
                   showCursor: false,
                   onComplete: () => {
-                    // Backspacing h3
                     setTimeout(() => {
                       new Typed(".typed-h3", {
                         strings: [""],
@@ -122,33 +113,29 @@ function backspaceReverse() {
                         backSpeed: 70,
                         showCursor: false,
                         onComplete: () => {
-                          // Restart full typing sequence
                           setTimeout(startTypingSequence, 500);
                         }
                       });
-                    }, 250); // pause before backspacing h3
+                    }, 250);
                   }
                 });
-              }, 250); // pause before backspacing h1
+              }, 250);
             }
           });
-        }, 250); // pause before backspacing h2
+        }, 250);
       }
     });
-  }, 250); // pause before backspacing h5
+  }, 250);
 }
 
-// Start the loop
 document.addEventListener("DOMContentLoaded", startTypingSequence);
     </script>
 
-  <div class="circularer-border">
     <div class="circular-border" id="pause">
-      <div>
+      <div class="image-wrapper">
         <img class="picture-border" src="pictures/IMG_04501.jpeg">
       </div>
     </div> 
-  </div>
 
   </section>
 
@@ -163,19 +150,57 @@ document.addEventListener("DOMContentLoaded", startTypingSequence);
     Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
     Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
   </p>
-  <!--<img src="pictures/IMG_04501.jpeg">-->
 </section>
 
 
   <section class="experience" id="experieence"><p class="boxed-textTwo">Experience</p></div>
-  <div><p>    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p></section>
+  <div>
+
+    <div class="pcb-back">
+      <div>
+      <h2>Trainer on Executive Board, Cornell Maker Club– Ithaca, NY</h2>
+      <h2>Mar 2025 - Ongoing</h2>
+      </div>
+      <li>
+        <ul>Lead trainees through a 40 minute explanation of the lab safety protocols and location of usable items in our
+ Electrical lab and Mechanical lab. After trainings the trainees get access to our labs</ul>
+        <ul>Communicate in weekly meetings to discuss future plans for trainings, future plans for organization of the labs,
+ and general updates for progress that has been made since the last meeting</ul>
+        <ul>Answer questions and guide makers through the labs and assist with usage of lab equipment (i.e., 3D printers,
+ soldering equipment, power supplies, etc.)</ul>
+      </li>
+    </div>
+
+    <div class="pcb-back">
+      <div>
+        <h2> Front of House Support, Donation Intaker, and Processor of Furniture, Ithaca Reuse Center -- Ithaca, NY</h2>
+        <h2> Sep 2024 – Ongoing </h2>
+      </div>
+      <li>
+        <ul>Organize electronics, furniture, automotive parts, gardening supplies, and household items in the store.</ul>
+        <ul>Intake approximately 300 donations a workday of reusable items.</ul>
+        <ul>Process, inspect, price, and display furniture and household items for sale.</ul>
+      </li>
+    </div>
+
+    <div class="pcb-back">
+      <div>
+        <h2>Lead Computer Aided Design Technician, Ace Robotics 72 FTC Team 21503
+Trumbull, CT</h2>
+        <h2>Sep 2022- Feb 2024</h2>
+      </div>
+      <li>
+        <ul>Earned a Connecticut State Scoring Record (2023) the FTC State Tournament win (2023), and World
+ Tournament Qualification (2023).</ul>
+        <ul>Designed the final robot with lift, intake, and drive systems in Onshape, including a linear slide, claw, Mecanum
+ wheels, and a hexagonal piece scooping mechanism.</ul>
+        <ul>Expanded team membership threefold (2024) and collaborated with programmers to refine encoder
+ measurements for autonomous movement.</ul>
+      </li>
+    </div>
+
+  </div>
+  </section>
 
   <div class="project-title" id="projects">
   <p class="boxed-textTwo">Projects</p>
@@ -200,7 +225,7 @@ document.addEventListener("DOMContentLoaded", startTypingSequence);
     <img src="pictures/Screenshot 2025-01-30 150756.png" alt="Self-Balancing Robot">
     <h2>Self Balancing Robot</h2>
     <p>Created a self balancing robot utilizing an Arduino Uno, L298N Driver Module, an MPU6050, and 3D printed parts from OnShape.</p>
-    <button href="selfbalancingrobot.html">View More</button>
+    <button><a href="selfbalancingrobot.html">View More</a></button>
   </div>
 </div>
 
@@ -216,7 +241,7 @@ document.addEventListener("DOMContentLoaded", startTypingSequence);
     <a href="https://www.linkedin.com/in/marcelo-d-88aa74277/" class = "fa fa-linkedin-square" target="_blank"> Linkedin</a>
     </div>
     <div class="butty">
-    <a href=" " class="fa fa-github-square" target="_blank"> Github</a></div>
+    <a href="https://github.com/marceloderas675" class="fa fa-github-square" target="_blank"> Github</a></div>
     <div class="butty">
     <a href="mailto:md2265@cornell.edu" class="fa fa-envelope" target ="_blank"> md2265@cornell.edu</a></div> 
   </div>
@@ -224,4 +249,5 @@ document.addEventListener("DOMContentLoaded", startTypingSequence);
   <script src="script.js"></script>
 </body>
 </html>
+  
   
