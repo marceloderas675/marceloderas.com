@@ -393,17 +393,65 @@ nav li a {
 }
 
 .pcb-back {
-	border: 4px solid blue;
+	border: 4px solid rgb(33,33,33);
 	text-align: center;
+	background-color: rgb(33,33,33);
+	list-style-type: none;
+	border-radius: 16px;
+	box-shadow: #9d1212;
+	font-family: "Fontdiner Swanky", serif;
+	font-size: 36px;
+	color:beige;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(3,1fr);
+	gap:10px;
+
 }
 
-@media(prefers-reduced-motion) {
-	.AboutMe{
-		transition:none;
-	}
-	.experience {
-		transition: none;
-	}
+.experience-back {
+	border: red solid 4px;
+	font-size:larger;
+	padding: 24px;
+	transform: scale(0.7);
+	border-radius: 72px;
+	box-shadow: 0 0 8px #ef1212, 0 0 16px #B31B1B;
+	animation: Pulse 2s infinite;
+}
+
+/* what if i did like a zoom animation and 3x3 grid
+so */
+
+.pcb-back li {
+	border: green solid 4px;
+	text-align: left;
+	padding-right: 4px;
+	font-size:larger;
+	font-family: "Slackey", sans-serif;
+	display:flex;
+	transform: scale(0.7);
+	border-radius: 72px;
+	box-shadow: 0 0 8px #ef1212, 0 0 16px #B31B1B;
+	animation: Pulse 2s infinite;
+}
+
+.embedded-code-container {
+	border: 4px solid rgb(33,33,33);
+	text-align: center;
+	background-color: rgb(33,33,33);
+	list-style-type: none;
+	border-radius: 16px;
+	padding: 16px;
+	box-shadow: #9d1212;
+}
+.embedded-code {
+	border: 4px solid rgb(33,33,33);
+	text-align: center;
+	background-color: rgb(33,33,33);
+	list-style-type: none;
+	border-radius: 16px;
+	box-shadow: #9d1212;
+	padding: 16px;
 }
 
 .AboutMe.show {
@@ -451,6 +499,14 @@ nav li a {
     justify-content: space-between;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  	box-shadow: 0 0 8px #ef1212, 0 0 16px #B31B1B;
+  	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 4px #ef1212; }
+  50% { box-shadow: 0 0 20px #ef1212; }
+  100% { box-shadow: 0 0 4px #ef1212; }
 }
 
 .project-card img {
@@ -498,6 +554,9 @@ nav li a {
 
 .project-card img:hover {
 	aspect-ratio: 16/11;
+	transform: scale(1.05);
+  	box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .footer {
