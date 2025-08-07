@@ -1,20 +1,60 @@
 
 body{
-    
-    background: rgb(63, 53, 53);
-	word-wrap: break-word;
-    /*because i made this default that's why menu is still this color */
+    background: var(--bg-main);
 }
-
-/*almost good just wanna move to right side */
 
 :root {
     --timing-function   : cubic-bezier(0.190, 1.000, 0.220, 1.000); 
-    --nav-width-desktop : 40em;
-    --nav-width-mobile  : 25em;
-    --nav-item-nb       : 6;
+	--hd-main: rgb(33,33,33);
+	--bg-main: rgb(63,53,53);
+	--burger-menu: white;
+	--button-color: black;
+	--section-a-bg: #B31B1B;
+	--section-b-bg: url(pictures/Portfolio\ Backkground.png);
+	--text-aura-bg: red;
+	--text-extra-bg: grey;
+	--beige-bg: beige;
 }
 
+.lightmode {
+	--hd-main: #ffe5e5;
+	/* the header make above lighter but darker than abg--hd-main: rgb(245,245,245);*/
+	--bg-main: #ffdddd;
+	--section-b-bg: url(pictures/Portfolio\ Backkground23.png);
+	--burger-menu: black;
+	--button-color: white;
+	/*--section-a-bg:  rgb(255,248,245);*/
+	--section-a-bg: #d46a6a;
+	--text-aura-bg: #660000;
+	--text-extra-bg: #333;
+	--beige-bg: rgb(33,33,33);
+}
+
+.NnD {
+	margin-right: 80px;
+	float:right;
+	border-radius: 50%;
+	padding: 6px;
+	background-color: var(--burger-menu);
+}
+
+
+.NnD svg{
+	fill: var(--button-color);
+}
+
+
+.NnD svg:last-child{
+	display:none;
+}
+
+.lightmode .NnD svg:first-child{
+	display:none;
+}
+
+.lightmode .NnD svg:last-child {
+	display:block;
+}
 
 .header{
   position: fixed;
@@ -26,7 +66,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(33,33,33);
+  background-color: var(--hd-main);
   padding: 0 1em;
 }
 
@@ -50,7 +90,6 @@ label::before {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		content: '';
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity .2s var(--timing-function);
@@ -76,7 +115,7 @@ label::before {
 			display: block;
 			width: 100%;
 			height: 12%;
-			background: white;
+			background: var(--burger-menu);
 			top: 50%;
 			content: '';
 			transition: all .5s var(--timing-function);
@@ -85,7 +124,7 @@ label::before {
 			display: block;
   			width: 100%;
   			height: 4px;
-  			background: white;
+  			background: var(--burger-menu);
   			position: absolute;
   			left: 0;
 			top: 50%;
@@ -98,7 +137,7 @@ label::before {
   			left: 0;
   			width: 100%;
   			height: 4px;
-  			background: white;
+  			background: var(--burger-menu);
   			transition: all 0.4s var(--timing-function);
 			top: -10px;
 		}
@@ -109,10 +148,9 @@ label::before {
   			left: 0;
   			width: 100%;
   			height: 4px;
-  			background: white;
+  			background: var(--burger-menu);
   			transition: all 0.4s var(--timing-function);
 		}
-	
 
 input:focus + label,
 label:hover {
@@ -121,8 +159,14 @@ label:hover {
 	}
 }
 
+/*label::after {
+	main {
+		opacity: 0.5;
+	}
+} */
+
 nav {
-	background-color: #B31B1B;
+	background-color: var(--section-a-bg);
     position: fixed;
 	top: 0;
 	left: auto;
@@ -154,14 +198,14 @@ nav {
 		transition: color .15s, transform .5s;
 		transition-timing-function: var(--timing-function);
 		&:hover, &:focus {
-			color: white;
+			color: var(--burger-menu);
 		}
 	}
 
 main {
 	padding-top: 120px;
 	overflow: hidden;
-	background-image: url(pictures/Portfolio\ Backkground.png);
+	background-image: var(--section-b-bg);
 	.content {
 		transform: translate3d(0,0,0);
 		will-change: transform, filter;
@@ -221,7 +265,7 @@ main {
 
 
 nav {
-    border-color: red;
+    border-color: var(--text-aura-bg);
     border-width: 8px;
     border-style: solid;
 	transition: opacity .5s var(--timing-function);
@@ -229,14 +273,14 @@ nav {
 
 .nav-links{
 	transition: opacity .5s var(--timing-function);
-    background-color: #B31B1B;
+    background-color: var(--section-a-bg);
     text-align: left;
     list-style-type: none;
 
 }
 
 nav li a {
-    background-color: #B31B1B;
+    background-color: var(--section-a-bg);
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
@@ -245,12 +289,12 @@ nav li a {
 
 .logo {
     font-size: 64px;
-    color: rgb(255,255,255);
+    color: var(--burger-menu);
 }
 .boxed-text {
 	padding: 0.25em 0.75em;
-  	background-color: #B31B1B;
-  	color: white;
+  	background-color: var(--section-a-bg);
+  	color: var(--burger-menu);
   	margin: 0;
 	/*
     max-width: 33%;*/
@@ -271,7 +315,7 @@ nav li a {
 }
 
 .intro-slide-text {
-	color:white;
+	color: var(--burger-menu);
 }
 
 .intro-slide-texty-text{
@@ -283,25 +327,25 @@ nav li a {
 }
 
 .typed-h3{
-	color: #B31B1B;
+	color: var(--section-a-bg);
 	overflow: hidden;
 	white-space: nowrap;
 	font-size: 48px;
-	text-shadow: 0 0 10px white, 
-				 0 0 20px white, 
-				 0 0 30px red;
+	text-shadow: 0 0 10px var(--burger-menu), 
+				 0 0 20px var(--burger-menu), 
+				 0 0 30px var(--text-aura-bg);
 	width: 0;
 	/*animation: typing 3s steps(13), blink 0.75s step-end infinite;*/
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .typed-h1{
-	color: white;
+	color: var(--burger-menu);
 	overflow: hidden;
 	white-space: nowrap;
-	text-shadow: 0 0 10px red, 
-				 0 0 20px red, 
-				 0 0 30px red;
+	text-shadow: 0 0 10px var(--text-aura-bg), 
+				 0 0 20px var(--text-aura-bg), 
+				 0 0 30px var(--text-aura-bg);
 	font-size:72px;
 	width: 0;
 	animation: typing 3s steps(13), blink 0.75s step-end infinite;
@@ -309,7 +353,7 @@ nav li a {
 }
 
 .typed-h5{
-	color: white;
+	color: var(--burger-menu);
 	overflow: hidden;
 	font-size:24px;
 	width: 0;
@@ -318,7 +362,7 @@ nav li a {
 }
 
 .typed-h2{
-	color: gray;
+	color: var(--text-extra-bg);
 	overflow: hidden;
 	white-space: nowrap;
 	width: 0;
@@ -329,7 +373,7 @@ nav li a {
 
 
 .circular-border {
-	border: 4px solid #B31B1B;
+	border: 4px solid var(--text-aura-bg);
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 	border-radius: 200px;
 	position: absolute;
@@ -353,9 +397,9 @@ nav li a {
 
 
 .project-title {
-    background-color:rgb(63, 53, 53);
+    background-color: var(--bg-main);
     text-align: center;
-    color: rgb(255,255,255);
+    color: var(--burger-menu);
     font-size: 64px;
 }
 
@@ -368,54 +412,65 @@ nav li a {
 }
 
 .AboutMe {
-    background-color:rgb(63, 53, 53);
+    background-color:var(--bg-main);
     text-align: center;
-    color: rgb(255,255,255);
-    font-size: 64px;
+    color: var(--burger-menu);
+    font-size: 36px;
 	opacity: 0;
 	transition: all 1s;
+	text-align: left;
+	padding: 16px;
+	font-family: "Fontdiner Swanky", serif;
 }
 
 .slideshowLike {
     display:flex;
-    border-color: red;
+    border-color: var(--text-aura-bg);
     border-width: 8px;
 }
 
 .experience {
-    background-color:rgb(63, 53, 53);
+    background-color: var(--bg-main);
     text-align: center;
-    color: rgb(255,255,255);
+    color: var(--burger-menu);
     font-size: 64px;
 	opacity: 0;
 	transition: all 1s;
-	background-image:url(pictures/Portfolio\ Backkground.png);
+	/*background-image: var(--section-b-bg);*/
 }
 
 .pcb-back {
-	border: 4px solid rgb(33,33,33);
+	border: 4px solid var(--hd-main);
 	text-align: center;
-	background-color: rgb(33,33,33);
+	background-color: var(--hd-main);
 	list-style-type: none;
 	border-radius: 16px;
 	box-shadow: #9d1212;
 	font-family: "Fontdiner Swanky", serif;
 	font-size: 36px;
-	color:beige;
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	grid-template-rows: repeat(3,1fr);
+	color: var(--beige-bg);
+	display: flex;
+	flex-wrap: wrap;
 	gap:10px;
 
 }
 
+.project-card img{
+	margin-top: 20px;
+}
+
+.pcb-back img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
 .experience-back {
-	border: red solid 4px;
+	border: var(--text-aura-bg) solid 4px;
 	font-size:larger;
 	padding: 24px;
 	transform: scale(0.7);
 	border-radius: 72px;
-	box-shadow: 0 0 8px #ef1212, 0 0 16px #B31B1B;
+	box-shadow: 0 0 8px #ef1212, 0 0 16px var(--section-a-bg);
 	animation: Pulse 2s infinite;
 }
 
@@ -426,28 +481,30 @@ so */
 	border: green solid 4px;
 	text-align: left;
 	padding-right: 4px;
+	font-size: 30px;
 	font-size:larger;
 	font-family: "Slackey", sans-serif;
 	display:flex;
+	flex-wrap:wrap;
 	transform: scale(0.7);
 	border-radius: 72px;
-	box-shadow: 0 0 8px #ef1212, 0 0 16px #B31B1B;
+	box-shadow: 0 0 8px #ef1212, 0 0 16px var(--section-a-bg);
 	animation: Pulse 2s infinite;
 }
 
 .embedded-code-container {
-	border: 4px solid rgb(33,33,33);
+	border: 4px solid var(--hd-main);
 	text-align: center;
-	background-color: rgb(33,33,33);
+	background-color: var(--hd-main);
 	list-style-type: none;
 	border-radius: 16px;
 	padding: 16px;
 	box-shadow: #9d1212;
 }
 .embedded-code {
-	border: 4px solid rgb(33,33,33);
+	border: 4px solid var(--hd-main);
 	text-align: center;
-	background-color: rgb(33,33,33);
+	background-color: var(--hd-main);
 	list-style-type: none;
 	border-radius: 16px;
 	box-shadow: #9d1212;
@@ -464,11 +521,11 @@ so */
 
 .boxed-textTwo {
     padding: 1px;
-    background-color: #B31B1B;
+    background-color: var(--section-a-bg);
     max-width: 33%;
     text-align: center;
     margin: 20px auto;
-	color:white;
+	color: var(--burger-menu);
 }
 
 @media (max-width:600px) {
@@ -491,7 +548,7 @@ so */
 }
 
 .project-card {
-	background: rgb(33,33,33);
+	background: var(--hd-main);
 	padding: 12px;
     text-align: center;
     display: flex;
@@ -499,7 +556,7 @@ so */
     justify-content: space-between;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  	box-shadow: 0 0 8px #ef1212, 0 0 16px #B31B1B;
+  	box-shadow: 0 0 8px #ef1212, 0 0 16px var(--section-a-bg);
   	animation: pulse 2s infinite;
 }
 
@@ -518,22 +575,22 @@ so */
 }
 
 .project-card h2 {
-	color: white;
+	color: var(--burger-menu);
 	text-align: left;
 }
 
 .project-card p {
     margin: 10px 0;
     font-size: 1rem;
-	color: white;
+	color: var(--burger-menu);
 	text-align: left;
 }
 
 .project-card button {
     padding: 8px;
     font-size: 0.95rem;
-    background-color: #B31B1B;
-    color: white;
+    background-color: var(--section-a-bg);
+    color: var(--burger-menu);
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -543,7 +600,7 @@ so */
 
 .project-card button a{
 	text-decoration: none;
-	color: white;
+	color: var(--burger-menu);
 	font-size: 0.95rem;
 
 }
@@ -566,8 +623,8 @@ so */
   text-align: center;
   text-decoration: none;
   display: grid;
-  background-color: rgb(63, 53, 53);
-  color: white;
+  background-color: var(--bg-main);
+  color: var(--burger-menu);
   position: relative;
   opacity: 0;
   transition: all 1s;
@@ -589,26 +646,26 @@ so */
 }
 
 .fa-linkedin-square{
-  background: #B31B1B;
-  color: white;
+  background: var(--section-a-bg);
+  color: var(--burger-menu);
   text-decoration: none;
 }
 
 .fa-github-square{
-  background: #B31B1B;
-  color: white;
+  background: var(--section-a-bg);
+  color: var(--burger-menu);
   text-decoration: none;
 }
 
 .fa-envelope {
-	background: #B31B1B;
-	color: white;
+	background: var(--section-a-bg);
+	color: var(--burger-menu);
 	text-decoration: none;
 }
 
 .butty{
 	padding:10px;
-	background-color:#B31B1B;
+	background-color: var(--section-a-bg);
 	border-radius: 20px;
 }
 
