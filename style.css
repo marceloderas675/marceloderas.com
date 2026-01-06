@@ -4,20 +4,7 @@ body{
 }
 
 :root {
-    --timing-function   : cubic-bezier(0.190, 1.000, 0.220, 1.000); 
-	--hd-main: rgb(33,33,33);
-	--bg-main: rgb(63,53,53);
-	--burger-menu: white;
-	--button-color: black;
-	--section-a-bg: #B31B1B;
-	--section-b-bg: url(pictures/Portfolio\ Backkground.png);
-	--text-aura-bg: red;
-	--text-extra-bg: grey;
-	--beige-bg: beige;
-}
-
-.lightmode {
-	--hd-main: #ffe5e5;
+    --hd-main: #ffe5e5;
 	/* the header make above lighter but darker than abg--hd-main: rgb(245,245,245);*/
 	--bg-main: #ffdddd;
 	--section-b-bg: url(pictures/Portfolio\ Backkground23.png);
@@ -28,6 +15,20 @@ body{
 	--text-aura-bg: #660000;
 	--text-extra-bg: #333;
 	--beige-bg: rgb(33,33,33);
+}
+
+.lightmode {
+
+	--timing-function   : cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+	--hd-main: rgb(33,33,33);
+	--bg-main: rgb(63,53,53);
+	--burger-menu: white;
+	--button-color: black;
+	--section-a-bg: #B31B1B;
+	--section-b-bg: url(pictures/Portfolio\ Backkground.png);
+	--text-aura-bg: red;
+	--text-extra-bg: grey;
+	--beige-bg: beige;
 }
 
 .NnD {
@@ -420,7 +421,6 @@ nav li a {
 	transition: all 1s;
 	text-align: left;
 	padding: 16px;
-	font-family: "Fontdiner Swanky", serif;
 }
 
 .slideshowLike {
@@ -430,86 +430,85 @@ nav li a {
 }
 
 .experience {
-    background-color: var(--bg-main);
-    text-align: center;
-    color: var(--burger-menu);
-    font-size: 64px;
-	opacity: 0;
-	transition: all 1s;
-	/*background-image: var(--section-b-bg);*/
-}
+      background-color: var(--bg-main);
+      text-align: center;
+      color: var(--burger-menu);
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.pcb-back {
-	border: 4px solid var(--hd-main);
-	text-align: center;
-	background-color: var(--hd-main);
-	list-style-type: none;
-	border-radius: 16px;
-	box-shadow: #9d1212;
-	font-family: "Fontdiner Swanky", serif;
-	font-size: 36px;
-	color: var(--beige-bg);
-	display: flex;
-	flex-wrap: wrap;
-	gap:10px;
+    /* Experience grid container */
+    .experience-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
 
-}
+    /* Experience card - the main container */
+    .experience-card {
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 15px;
+      border-left: 4px solid var(--section-a-bg);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
 
-.project-card img{
-	margin-top: 20px;
-}
+    .experience-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 10px 30px rgba(179, 27, 27, 0.3);
+    }
 
-.pcb-back img{
-	max-width: 100%;
-	max-height: 100%;
-}
+    /* Header layout - job title and date on same line */
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
 
-.experience-back {
-	border: var(--text-aura-bg) solid 4px;
-	font-size:larger;
-	padding: 24px;
-	transform: scale(0.7);
-	border-radius: 72px;
-	box-shadow: 0 0 8px #ef1212, 0 0 16px var(--section-a-bg);
-	animation: Pulse 2s infinite;
-}
+    .experience-header h3 {
+      color: var(--text-aura-bg);
+      font-size: 1.3rem;
+      flex: 1;
+      margin: 0;
+    }
 
-/* what if i did like a zoom animation and 3x3 grid
-so */
+    .experience-header .date {
+      color: var(--text-aura-bg);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
 
-.pcb-back li {
-	border: green solid 4px;
-	text-align: left;
-	padding-right: 4px;
-	font-size: 30px;
-	font-size:larger;
-	font-family: "Slackey", sans-serif;
-	display:flex;
-	flex-wrap:wrap;
-	transform: scale(0.7);
-	border-radius: 72px;
-	box-shadow: 0 0 8px #ef1212, 0 0 16px var(--section-a-bg);
-	animation: Pulse 2s infinite;
-}
+    /* Bullet points styling */
+    .experience-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
 
-.embedded-code-container {
-	border: 4px solid var(--hd-main);
-	text-align: center;
-	background-color: var(--hd-main);
-	list-style-type: none;
-	border-radius: 16px;
-	padding: 16px;
-	box-shadow: #9d1212;
-}
-.embedded-code {
-	border: 4px solid var(--hd-main);
-	text-align: center;
-	background-color: var(--hd-main);
-	list-style-type: none;
-	border-radius: 16px;
-	box-shadow: #9d1212;
-	padding: 16px;
-}
+    .experience-card li {
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      color: var(--burger-menu);
+      transition: color 0.3s;
+    }
+
+    .experience-card:hover li {
+      color: var(--primary);
+    }
+
+    .experience-card li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
 
 .AboutMe.show {
 	opacity: 1;
@@ -526,6 +525,7 @@ so */
     text-align: center;
     margin: 20px auto;
 	color: var(--burger-menu);
+	font: 3rem
 }
 
 @media (max-width:600px) {
@@ -672,3 +672,8 @@ so */
 .butty:hover {
 	opacity: 0.7;
 }
+
+.butty:hover {
+	opacity: 0.7;
+}
+
