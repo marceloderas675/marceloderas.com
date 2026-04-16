@@ -6,7 +6,7 @@ body{
 :root {
     --hd-main: #ffe5e5;
 	/* the header make above lighter but darker than abg--hd-main: rgb(245,245,245);*/
-	--bg-main: #ffdddd;
+	--bg-main: #239c07;
 	--section-b-bg: url(pictures/Portfolio\ Backkground23.png);
 	--burger-menu: black;
 	--button-color: white;
